@@ -1,13 +1,18 @@
+setInterval(fly, 25);
+document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+        up();
+    }
+});
 
-gameview()
-function gameview(){
-let html = " <div id='title'>GET ACADEMY</div>";
+function gameview() {
+    let html = " <div id='title'>GET ACADEMY</div>";
 
-html+= `
-<div id="gamescreen">
-<img id="bird" src="${model.bird.img}">
-</div>`
+    html += `
+        <div id="gamescreen">
+            <img id="bird" src="${model.bird.img}" style="top:${model.bird.yaxis}vh;"'>
+        </div>`;
 
 
-document.getElementById("game").innerHTML = html;
+    document.getElementById("game").innerHTML = html;
 }
