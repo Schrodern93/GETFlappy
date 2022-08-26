@@ -12,7 +12,11 @@ body {
 #gamescreen {
     width: 75vw;
     height: 70vh;
-    background-color: hotpink;
+
+    background-image: url("assets/logo.svg");
+    background-repeat: no-repeat;
+    object-fit: fill;
+
     border: 0.1rem solid black;
 
 }

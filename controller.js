@@ -4,6 +4,7 @@ function fly(){
 }
 
 function up(){
-    model.bird.yaxis -= 15;
+    var result = model.bird.yaxis -= 15;
+    model.bird.yaxis -= result < 0
     gameview();
 }
