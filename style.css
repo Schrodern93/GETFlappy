@@ -9,7 +9,14 @@ body {
     text-align: center;
 }
 
+#score {
+    font-size: 7.5rem;
+    position: relative;
+    top: 0;
+}
+
 #gamescreen {
+    position: relative;
     width: 75vw;
     height: 70vh;
 
@@ -18,7 +25,6 @@ body {
     object-fit: fill;
 
     border: 0.1rem solid black;
-
 }
 
 #bird {
@@ -26,4 +32,10 @@ body {
     left: 5rem;
     height: 15%;
     background-color: pink;
+
 }
+
+.wall{
+    background-color: hotpink;
+    position: absolute;
+} 
