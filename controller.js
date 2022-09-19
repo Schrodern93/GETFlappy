@@ -1,36 +1,30 @@
 function fly() {
     checkIfBottomIsHit();
-    model.bird.yaxis += 0.5;
-    console.log(model.bird.yaxis);
+    model.bird.yaxis += model.GRAVITY;
 }
 
 function up() {
-    if (model.bird.yaxis <= 5) {
-        alert('Game Over');
-    };
-    var result = model.bird.yaxis -= 15;
-    model.bird.yaxis -= result < 0
+    if (model.bird.yaxis <= model.TOP) { /* GAME OVER */};
+    model.bird.yaxis -= 10;
 }
 
 function checkIfBottomIsHit() {
-    if (model.bird.yaxis >= 60) {
-        model.bird.yaxis = 0;
-    }
+    if (model.bird.yaxis >= model.BOTTOM) model.bird.yaxis = model.TOP;
 }
 
 function moveObject() {
-    if(model.collisionObject.X < 1) model.collisionObject.X = 75;
-    model.collisionObject.X -= 0.5
+    if(model.collisionObject.X < model.RIGHT) model.collisionObject.X = model.LEFT;
+    else model.collisionObject.X -= model.SPEED;
 }
 function CheckForCollision() {
     if(model.collisionObject.X == model.bird.xaxis){
-        if(model.bird.yaxis <= model.collisionObject.Height) alert('I am flapped');
+        if(model.bird.yaxis <= model.collisionObject.Height) console.log("I am flappy");
         else model.score++;
     }
 }
 function updateGame() {
-    fly();
     CheckForCollision();
+    fly();
     moveObject();
     gameview();
 }

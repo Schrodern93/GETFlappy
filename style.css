@@ -10,18 +10,20 @@ body {
 }
 
 #score {
-    font-size: 7.5rem;
+    font-size: 6.5rem;
     position: relative;
     top: 0;
 }
 
-#gamescreen {
+#game {
     position: relative;
     width: 75vw;
     height: 70vh;
 
     background-image: url("assets/logo.svg");
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     object-fit: fill;
 
     border: 0.1rem solid black;
@@ -30,7 +32,7 @@ body {
 #bird {
     position: relative;
     left: 5rem;
-    height: 15%;
+    height: 10vh;
     background-color: pink;
 
 }

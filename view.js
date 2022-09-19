@@ -4,9 +4,8 @@ document.addEventListener('keyup', event => {
 });
 
 function gameview() {
-    let html = " <div id='title'>GET ACADEMY</div>";
+    let html = "";
     html += `
-        <div id="gamescreen">
             <div id="score">${model.score}</div>
             <div class="wall" 
                 style="top:${model.collisionObject.Y}vh; 
@@ -17,8 +16,7 @@ function gameview() {
 
             <img id="bird" src="${model.bird.img}" 
                 style="top:${model.bird.yaxis}vh; 
-                left:${model.bird.xaxis}"'>
-        </div>`;
+                left:${model.bird.xaxis}"'>`;
 
 
     document.getElementById("game").innerHTML = html;
