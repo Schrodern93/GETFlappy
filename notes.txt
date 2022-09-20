@@ -1,0 +1,10 @@
+Gjort 20.09.22
+
+- Lagt inn array for walls
+- Endret fra vh og vw til % for at den skal være % vis størrelse i forhold til game skjermen og ikke hele skjermen
+- lagt på en ekstra høyde i sjekker for kollisjon fordi vi sjekker høyden til wall mot høyden til bird
+
+
+
+Små buggs
+- bytter ut wallen før den har fullført hele banen

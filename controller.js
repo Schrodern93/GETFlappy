@@ -1,6 +1,6 @@
 function fly() {
     checkIfBottomIsHit();
-    model.bird.yaxis += model.GRAVITY;
+//   model.bird.yaxis += model.GRAVITY;
 }
 
 function up() {
@@ -9,22 +9,33 @@ function up() {
 }
 
 function checkIfBottomIsHit() {
-    if (model.bird.yaxis >= model.BOTTOM) model.bird.yaxis = model.TOP;
+    if (model.bird.yaxis >= model.BOTTOM) model.bird.yaxis = model.TOP; // skal endres til at fuglen dør
 }
 
-function moveObject() {
-    if(model.collisionObject.X < model.RIGHT) model.collisionObject.X = model.LEFT;
-    else model.collisionObject.X -= model.SPEED;
+function moveObject(i) {
+    if(model.listOfCollisionObjects[i].X < model.RIGHT) model.listOfCollisionObjects[i].X = model.LEFT;
+    else model.listOfCollisionObjects[i].X -= model.SPEED;
 }
-function CheckForCollision() {
-    if(model.collisionObject.X == model.bird.xaxis){
-        if(model.bird.yaxis <= model.collisionObject.Height) console.log("I am flappy");
-        else model.score++;
+function CheckForCollision(i) {
+    if(model.counter >= model.listOfCollisionObjects.length -1) model.counter = 0;
+    if(model.listOfCollisionObjects[i].X == model.bird.xaxis + model.bird.Width){
+        console.log(model.bird.yaxis+model.bird.Height)
+        console.log(model.listOfCollisionObjects[i].Height)
+       if(model.bird.yaxis + model.bird.Height + 16 <= model.listOfCollisionObjects[i].Height) console.log('flappy died');
+         else {
+            model.score++;
+            model.counter++;
+        }
+        
     }
+    // if(model.collisionObject.X == model.bird.xaxis && model.bird.yaxis >= model.collisionObject.Height){
+    //     model.score++;
+    // } 
+   
 }
 function updateGame() {
-    CheckForCollision();
+    CheckForCollision(model.counter);
     fly();
-    moveObject();
+    moveObject(model.counter);
     gameview();
 }
