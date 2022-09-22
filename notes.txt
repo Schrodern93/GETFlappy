@@ -7,4 +7,13 @@ Gjort 20.09.22
 
 
 Små buggs
-- bytter ut wallen før den har fullført hele banen
+- bytter ut wallen før den har fullført hele banen - DONE ( FLYTTET counter++ fra kollisjonssjekk til move objekt sjekken )
+
+skal gjøres : 
+
+- flere vegger samtidig, både oppe og nede.
+- GAME OVER screen
+- Highscore view?
+    - Skrive ned highscore m/ navn i en tekstfil og lese fra denne
+- Fikse SVG? til fulen, den er firkantet.
+- Ordne bakgrunnen
