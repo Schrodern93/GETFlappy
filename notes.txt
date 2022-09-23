@@ -1,3 +1,9 @@
+Gjort 23.09.22
+- Legge til vegger nede
+- fikse opp i controllere for at de skulle håndtere vegger oppe og nede
+- fintuning av style for at det skal se riktig ut (ikke helt ferdig)
+
+
 Gjort 20.09.22
 
 - Lagt inn array for walls
