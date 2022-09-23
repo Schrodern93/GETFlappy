@@ -14,9 +14,9 @@ function gameview() {
       
             ${createWalls(model.counter)}
 
-        <div id="bird" style="top:${model.bird.yaxis}%; 
-        left:${model.bird.xaxis}%; width: ${model.bird.Width}%;"><img style="heigth:${model.bird.Height}%; width: 100%;"  src="${model.bird.img}"/></div>`;
-
+        <div id="bird" style="top:${model.bird.yaxis}%; left:${model.bird.xaxis}%; width: ${model.bird.Width}%;">
+            <img style="heigth:${model.bird.Height}%; width: 100%;"  src="${model.bird.img}"/>
+        </div>`;
     }
 
 
@@ -36,6 +36,13 @@ function createWalls(i) {
                     left:${model.listOfCollisionObjects[i].X}%; 
                     width:${model.listOfCollisionObjects[i].Width}%; 
                     height:${model.listOfCollisionObjects[i].Height}%;">
+                </div>
+
+                <div class="wall" 
+                    style="bottom:${model.bottomListOfCollisionObjects[i].Y}%; 
+                    left:${model.bottomListOfCollisionObjects[i].X}%; 
+                    width:${model.bottomListOfCollisionObjects[i].Width}%; 
+                    height:${model.bottomListOfCollisionObjects[i].Height}%;">
                 </div>`;
     return html;
 }
