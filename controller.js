@@ -1,6 +1,7 @@
 function fly() {
     checkIfBottomIsHit();
-//   model.bird.yaxis += model.GRAVITY;
+    checkIfTopIsHit();
+   model.bird.yaxis += model.GRAVITY;
 }
 
 function up() {
@@ -9,7 +10,14 @@ function up() {
 }
 
 function checkIfBottomIsHit() {
- // skal endres til at fuglen dør
+    if(model.bird.yaxis - 3 > model.BOTTOM){
+        model.birdIsAlive = false;
+    }
+}
+function checkIfTopIsHit() {
+    if(model.bird.yaxis +model.bird.Height < model.TOP){
+        model.birdIsAlive = false;  
+    }
 }
 
 function moveObject(i) {
@@ -28,9 +36,9 @@ function CheckForCollision(i) {
    
     if(model.listOfCollisionObjects[i].X == model.bird.xaxis + (model.bird.Width / 2)) { // Midten av fuglen..
         console.log(model.bird.yaxis+model.bird.Height)
-        console.log("venstre side", model.bird.yaxis)
+        console.log("venstre side", model.bird.yaxis + model.bird.Height)
         console.log("høyre side", model.bottomListOfCollisionObjects[i].Height)
-       if(model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height ||
+       if(model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
           model.bird.yaxis - model.bird.Height <= model.bottomListOfCollisionObjects[i].Height){
             model.birdIsAlive = false;
        }        
@@ -46,4 +54,5 @@ function updateGame() {
     fly();
     moveObject(model.counter);
     gameview();
+    
 }

@@ -1,7 +1,7 @@
 body {
     display: flex;
-    justify-content: center;
-    align-self: center;
+    /* justify-content: center;
+    align-self: center; */
 }
 
 #title {
@@ -18,8 +18,8 @@ body {
 
 #game {
     position: relative;
-    width: 85vw;
-    height: 95vh;
+    width: 75vw;  /* 85vw originalt */
+    height: 85vh; /* 95vh originalt */
 
     background-image: url("assets/logo.svg");
     background-repeat: no-repeat;
@@ -34,10 +34,22 @@ body {
     position: relative;
     left: 5rem;
     height: 5vh;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .wall{
     background-color: hotpink;
     position: absolute;
 } 
+
+
+#scoreBoardContainer{
+    position: relative;
+    width: 20vw;  
+    height: 85vh; 
+}
+.scoreBoard{
+   font-size: larger;
+   padding-left: 2vw;
+   padding-top: 2vh;
+}
