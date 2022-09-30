@@ -40,19 +40,29 @@ function CheckForCollision(i) {
         console.log("høyre side", model.bottomListOfCollisionObjects[i].Height)
        if(model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
           model.bird.yaxis - model.bird.Height <= model.bottomListOfCollisionObjects[i].Height){
-            model.birdIsAlive = false;
+            endGame();
        }        
 
        if(model.birdIsAlive) model.score++;
     }
 }
 function updateGame() {
-    if(!model.birdIsAlive){
-        clearInterval(gameLoop);
-    }
+    if(!model.birdIsAlive) endGame();
     CheckForCollision(model.counter);
     fly();
     moveObject(model.counter);
     gameview();
-    
+}
+
+function endGame() {
+    model.birdIsAlive = false;
+    clearInterval(gameLoop);
+}
+
+function startGame() {
+    model.birdIsAlive = true;
+    gameLoop = setInterval(updateGame, 25);
+    document.addEventListener('keyup', event => {
+        if (event.code === 'Space') up();
+    });
 }

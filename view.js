@@ -1,7 +1,4 @@
-var gameLoop = setInterval(updateGame, 25);
-document.addEventListener('keyup', event => {
-    if (event.code === 'Space') up();
-});
+var gameLoop;
 
 function gameview() {
     let html = "";

@@ -1,7 +1,7 @@
 
 
 const model = {
-    birdIsAlive: true,
+    birdIsAlive: false,
     BOTTOM: 69, // hvor langt ned fuglen kan falle
     TOP: 0,
     LEFT: 99,
@@ -11,6 +11,10 @@ const model = {
     SPEED: 0.5,
 
     score: 0,
+
+    input:{
+        name:"",
+    },
     // Y axis top = 0 bottom = 69
     bird: { Height: 10, Width: 10, yaxis:40, xaxis: 5, img: "/assets/getvinger.svg", },
     collisionObject: { X: 0, Y: 0, Width: 1, Height: 25 },
@@ -34,15 +38,15 @@ const model = {
     counter: 0,
 
     scoreBoard:[
+        {name: "Bjørnar", score:15},
         {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
-        {name: "Joakim", score:12},
+        {name: "Linn", score:112},
+        {name: "Therese", score:14},
+        {name: "Marie", score:13},
+        {name: "Terje", score:19},
+        {name: "Anita", score:765},
+        {name: "Erik", score:4},
+        {name: "Elin", score:155},
+        {name: "Eskil", score:7},
     ],
 }
