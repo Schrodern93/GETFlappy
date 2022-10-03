@@ -1,7 +1,7 @@
 function fly() {
     checkIfBottomIsHit();
     checkIfTopIsHit();
-   model.bird.yaxis += model.GRAVITY;
+    model.bird.yaxis += model.GRAVITY;
 }
 
 function up() {
@@ -35,17 +35,25 @@ function moveObject(i) {
 function CheckForCollision(i) {
    
     if(model.listOfCollisionObjects[i].X == model.bird.xaxis + (model.bird.Width / 2)) { // Midten av fuglen..
-        console.log(model.bird.yaxis+model.bird.Height)
-        console.log("venstre side", model.bird.yaxis + model.bird.Height)
-        console.log("høyre side", model.bottomListOfCollisionObjects[i].Height)
-       if(model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
-          model.bird.yaxis - model.bird.Height <= model.bottomListOfCollisionObjects[i].Height){
+        // console.log(model.bird.yaxis+model.bird.Height)
+        // console.log("Fuglen pluss høyde", model.bird.yaxis + model.bird.Height + 3)
+        // console.log("Fuglen minus høyde", model.bird.yaxis - model.bird.Height)
+        // console.log("stolpe oppe", model.listOfCollisionObjects[i].Height)
+       
+       if(model.bird.yaxis < (model.listOfCollisionObjects[i].Height  - model.bird.Height) || 
+          model.bird.yaxis > (model.BOTTOM - model.bottomListOfCollisionObjects[i].Height + 2)){  // +2 for tweeking , må fikse litt til
+            console.log("stolpe oppe", model.listOfCollisionObjects[i].Height  - model.bird.Height)
+            console.log("stolpe nede", model.BOTTOM - model.bottomListOfCollisionObjects[i].Height)
+            console.log("Bird y axis",  model.bird.yaxis)
             endGame();
        }        
-
+// model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
        if(model.birdIsAlive) model.score++;
     }
 }
+
+//69 - model.bottomListOfCollisionObjects[i].Height = 64 til 19      0 + model.listOfCollisionObjects[i].Height = 5 til 40  
+// bird height = 10 
 function updateGame() {
     if(!model.birdIsAlive) endGame();
     CheckForCollision(model.counter);

@@ -16,7 +16,7 @@ const model = {
         name:"",
     },
     // Y axis top = 0 bottom = 69
-    bird: { Height: 10, Width: 10, yaxis:40, xaxis: 5, img: "/assets/getvinger.svg", },
+    bird: { Height: 10, Width: 10, yaxis:30, xaxis: 5, img: "/assets/getvinger.svg", },
     collisionObject: { X: 0, Y: 0, Width: 1, Height: 25 },
 
     listOfCollisionObjects: [
