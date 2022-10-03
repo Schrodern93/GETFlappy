@@ -23,3 +23,7 @@ skal gjøres :
     - Skrive ned highscore m/ navn i en tekstfil og lese fra denne
 - Fikse SVG? til fulen, den er firkantet.
 - Ordne bakgrunnen
+
+
+endless background ? 
+https://stackoverflow.com/questions/40190755/html5-endless-background-animation
