@@ -70,6 +70,7 @@ function updateGame() {
 function endGame() {
     model.birdIsAlive = false;
     clearInterval(gameLoop);
+    addPlayerToScoreBoard()
 }
 
 function startGame() {
@@ -78,4 +79,11 @@ function startGame() {
     document.addEventListener('keyup', event => {
         if (event.code === 'Space') up();
     });
+}
+function addPlayerToScoreBoard(){
+    let player = {}
+    player.name = model.input.name
+    player.score = model.score
+    model.scoreBoard.push(player); 
+    createScoreboard()
 }

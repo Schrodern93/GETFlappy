@@ -22,7 +22,7 @@ function gameview() {
 
 function startOver(){
     alert('funker')
-    window.location.reload();
+    window.location.reload(); // Denne fjerner lagrede verdier i scoreboard, må legge til local storage for at det ikke skal skje 
 }
 function createWalls(i) {
     let html = "";
