@@ -65,7 +65,7 @@ input{
     position: relative;
     left: 5rem;
     height: 5vh;
-    /* background-color: pink; */
+    background-color: pink;
 }
 
 .wall {

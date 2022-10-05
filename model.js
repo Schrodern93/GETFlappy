@@ -10,7 +10,7 @@ const model = {
     GRAVITY: 0.4,
     SPEED: 0.5,
 
-    score: 0,
+    score: 11,
 
     input:{
         name:"",
@@ -22,7 +22,10 @@ const model = {
     listOfCollisionObjects: [
         { X: 0, Y: 0, Width: 1, Height: 25 },
         { X: 0, Y: 0, Width: 1, Height: 32 },
-        { X: 0, Y: 0, Width: 1, Height: 40 },
+        { X: 0, Y: 0, Width: 1, Height: 38 },
+        { X: 0, Y: 0, Width: 1, Height: 54 },
+        { X: 0, Y: 0, Width: 1, Height: 20 },
+        { X: 0, Y: 0, Width: 1, Height: 54 },
         { X: 0, Y: 0, Width: 1, Height: 5 },
 
     ],
@@ -30,7 +33,10 @@ const model = {
     bottomListOfCollisionObjects: [
         { X: 0, Y: 0, Width: 1, Height: 25 },
         { X: 0, Y: 0, Width: 1, Height: 34 },
-        { X: 0, Y: 0, Width: 1, Height: 40 },
+        { X: 0, Y: 0, Width: 1, Height: 38 },
+        { X: 0, Y: 0, Width: 1, Height: 20 },
+        { X: 0, Y: 0, Width: 1, Height: 54 },
+        { X: 0, Y: 0, Width: 1, Height: 20 },
         { X: 0, Y: 0, Width: 1, Height: 5 },
 
     ],

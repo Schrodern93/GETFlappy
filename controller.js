@@ -5,8 +5,8 @@ function fly() {
 }
 
 function up() {
-    if (model.bird.yaxis <= model.TOP) { /* GAME OVER */};
-    model.bird.yaxis -= 10;
+    if (model.bird.yaxis <= (model.TOP - model.bird.Height - 2 )) { /* GAME OVER */ };
+    model.bird.yaxis -= 8;
 }
 
 function checkIfBottomIsHit() {
@@ -15,7 +15,7 @@ function checkIfBottomIsHit() {
     }
 }
 function checkIfTopIsHit() {
-    if(model.bird.yaxis +model.bird.Height < model.TOP){
+    if(model.bird.yaxis + model.bird.Height < model.TOP){
         model.birdIsAlive = false;  
     }
 }
@@ -40,15 +40,19 @@ function CheckForCollision(i) {
         // console.log("Fuglen minus høyde", model.bird.yaxis - model.bird.Height)
         // console.log("stolpe oppe", model.listOfCollisionObjects[i].Height)
        
-       if(model.bird.yaxis < (model.listOfCollisionObjects[i].Height  - model.bird.Height) || 
+       if(model.bird.yaxis < (model.listOfCollisionObjects[i].Height  - (model.bird.Height + 2)) || 
           model.bird.yaxis > (model.BOTTOM - model.bottomListOfCollisionObjects[i].Height + 2)){  // +2 for tweeking , må fikse litt til
-            console.log("stolpe oppe", model.listOfCollisionObjects[i].Height  - model.bird.Height)
-            console.log("stolpe nede", model.BOTTOM - model.bottomListOfCollisionObjects[i].Height)
+            console.log("stolpe oppe", model.listOfCollisionObjects[i].Height  - (model.bird.Height + 2))
+            console.log("stolpe nede", model.BOTTOM - model.bottomListOfCollisionObjects[i].Height +2)
             console.log("Bird y axis",  model.bird.yaxis)
             endGame();
        }        
 // model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
-       if(model.birdIsAlive) model.score++;
+       if(model.birdIsAlive){
+        model.score++;
+        model.SPEED = 1;
+        console.log(model.SPEED, model.score);
+       } 
     }
 }
 
@@ -56,6 +60,7 @@ function CheckForCollision(i) {
 // bird height = 10 
 function updateGame() {
     if(!model.birdIsAlive) endGame();
+   
     CheckForCollision(model.counter);
     fly();
     moveObject(model.counter);
