@@ -6,12 +6,11 @@ const model = {
     TOP: 0,
     LEFT: 99,
     RIGHT: 0, // for å stoppe 
-
     GRAVITY: 0.4,
     SPEED: 0.5,
 
-    score: 11,
-
+    score: 0,
+    margin:0.5,
     input:{
         name:"",
     },
@@ -29,7 +28,7 @@ const model = {
         { X: 0, Y: 0, Width: 1, Height: 5 },
 
     ],
-
+    // maks høyde på stolpene til sammen er 74
     bottomListOfCollisionObjects: [
         { X: 0, Y: 0, Width: 1, Height: 25 },
         { X: 0, Y: 0, Width: 1, Height: 34 },
