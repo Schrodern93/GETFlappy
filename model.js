@@ -1,16 +1,11 @@
 
 
 const model = {
-    birdIsAlive: false,
     BOTTOM: 69, // hvor langt ned fuglen kan falle
     TOP: 0,
     LEFT: 99,
     RIGHT: 0, // for å stoppe 
-    GRAVITY: 0.4,
-    SPEED: 0.5,
 
-    score: 0,
-    margin:0.5,
     input:{
         name:"",
     },
@@ -19,7 +14,7 @@ const model = {
     collisionObject: { X: 0, Y: 0, Width: 1, Height: 25 },
 
     listOfCollisionObjects: [
-        { X: 0, Y: 0, Width: 1, Height: 25 },
+        { X: 0, Y: 0, Width: 1, Height: 25},
         { X: 0, Y: 0, Width: 1, Height: 32 },
         { X: 0, Y: 0, Width: 1, Height: 38 },
         { X: 0, Y: 0, Width: 1, Height: 54 },

@@ -23,13 +23,19 @@ body {
     color:#EE7100 ;
 }
 button{
-    height: 40px;
+    height: 60px;
+    width: 160px;
     font-size: 30px;
-    background-color: aliceblue;
-    border: 2px teal solid;
+    background-color: rgb(32, 35, 45);
+    color:#EE7100;
+    border: 2px #EE7100  solid;
     border-radius: 5px;
 }
 input{
+    border: 2px #EE7100  solid;
+    border-radius: 5px;
+    background-color: rgb(32, 35, 45);
+    color:#EE7100;
     height: 40px;
     font-size: 30px;
     margin: 10px;
@@ -52,7 +58,6 @@ input{
     height: 85vh;
     /* 95vh originalt */
 
-    background-image: url("assets/logo.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -69,7 +74,8 @@ input{
 }
 
 .wall {
-    background-color: hotpink;
+    /* background-color: hotpink; */
+    background-color: black;
     position: absolute;
 }
 

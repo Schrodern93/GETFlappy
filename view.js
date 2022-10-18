@@ -2,11 +2,8 @@ var gameLoop;
 
 function gameview() {
     let html = "";
-    if (model.birdIsAlive == false) {
-        html += 'GAME OVER <button onclick="startOver()"> start nytt spill</button>'; // TODO: Lage nytt view
-    }
-    else {
-        html += `
+    if(!model.birdIsAlive) html += gameOverView();
+    else html += `
         <div id="score">${model.score}</div>
       
             ${createWalls(model.counter)}
@@ -14,16 +11,20 @@ function gameview() {
         <div id="bird" style="top:${model.bird.yaxis}%; left:${model.bird.xaxis}%; width: ${model.bird.Width}%;">
             <img style="heigth:${model.bird.Height}%; width: 100%;"  src="${model.bird.img}"/>
         </div>`;
-    }
+
 
 
     document.getElementById("game").innerHTML = html;
 }
 
-function startOver(){
-    alert('funker')
-    window.location.reload(); // Denne fjerner lagrede verdier i scoreboard, må legge til local storage for at det ikke skal skje 
+function gameOverView() {
+    return `<div class="startScreen">
+                <div>GAME OVER </div>
+                <div>DIN SCORE: ${model.score} </div>
+                <button style="width: 240px; height:100px;" onclick="showStartScreen();">START NYTT SPILL</button>
+                </div>`;
 }
+
 function createWalls(i) {
     let html = "";
 

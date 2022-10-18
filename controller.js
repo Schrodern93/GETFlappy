@@ -25,6 +25,7 @@ function moveObject(i) {
         model.listOfCollisionObjects[i].X = model.LEFT;
         model.bottomListOfCollisionObjects[i].X = model.LEFT;
         model.counter = model.counter >= model.listOfCollisionObjects.length - 1 ? 0 : model.counter + 1;
+        model.birdThroughObject = false;
     }
     else {
         model.listOfCollisionObjects[i].X -= model.SPEED;
@@ -41,7 +42,8 @@ function CheckForCollision(i) {
             model.birdIsAlive = false;
         }
         // model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
-        if (model.birdIsAlive) {
+        if (model.birdIsAlive & !model.birdThroughObject) {
+            model.birdThroughObject = true; 
             model.score++;
             model.SPEED += 0.05;
             model.margin += 0.05;
@@ -62,11 +64,11 @@ function updateGame() {
 function endGame() {
     model.birdIsAlive = false;
     clearInterval(gameLoop);
-    addPlayerToScoreBoard()
+    addPlayerToScoreBoard();
 }
 
 function startGame() {
-    model.birdIsAlive = true;
+    initGame();
     gameLoop = setInterval(updateGame, 25);
     document.addEventListener('keyup', event => {
         if (event.code === 'Space') up();
@@ -78,4 +80,14 @@ function addPlayerToScoreBoard() {
     player.score = model.score
     model.scoreBoard.push(player);
     createScoreboard()
+}
+
+function initGame(){
+    model.birdIsAlive = true;
+    model.birdThroughObject = false;
+    model.GRAVITY = 0.4;
+    model.SPEED = 0.5;
+    model.score = 0;
+    model.margin = 0.5;
+    model.bird = { Height: 10, Width: 10, yaxis:30, xaxis: 5, img: "/assets/getvinger.svg" };
 }
