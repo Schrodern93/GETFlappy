@@ -1,3 +1,12 @@
+19.10.22
+Spillet er så og si ferdig
+mangler:
+- små justeringer på når nøkkelen treffer veggene
+- lagring av scoreboard
+
+
+
+
 Gjort 23.09.22
 - Legge til vegger nede
 - fikse opp i controllere for at de skulle håndtere vegger oppe og nede

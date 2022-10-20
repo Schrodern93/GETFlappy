@@ -7,13 +7,14 @@
     <title>GetFlappy</title>
     <link rel="stylesheet" href="style.css"/>
     <script src="model.js"></script>
+    <script src="localStorage.js"></script>
     <script src="controller.js"></script>
     <script defer src="view.js"></script>
     <script defer src="startGameView.js"></script>
     <script defer src="scoreBoard.js"></script>
 </head>
-<body>
-    <div id="game" style="background-image: url('assets/flappybackground96.png');"></div>
+<body onload="getScoreBoardFromLocalStorage();">
+    <div id="game" style="background-image: url('assets/flappybackground96.png');"  ></div>
     <div id="scoreBoardContainer"></div>
 
     <!-- FIKS BUG LAGG -->

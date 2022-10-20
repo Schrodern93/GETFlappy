@@ -1,18 +1,25 @@
-function scoreCounter() {
-    if (model.birdIsAlive = false) {
-      localStorage.scoreCount = model.score;
-      localStorage.name = model.input.name;
-      model.scoreBoard.push()
+function addToScoreboard() {
+
+  let board = localStorage.getItem('scoreBoard');
+  console.log(board)
+  let person = {
+    score: model.score,
+    name: model.input.name
+  };
+
+  // board.push(person);
+}
+function getScoreBoardFromLocalStorage() {
+
+
+  let scoreBoard = localStorage.getItem('scoreBoard');
+
+  if(scoreBoard.length == 0) {
+   localStorage.setItem('scoreBoard', []);
   }
 
-}
-function getScoreBoardFromLocalStorage(){
-let person = {};
+  scoreBoard = localStorage.getItem('scoreBoard');
+  console.log(scoreBoard, "scoreBoard etter")
+  model.scoreBoard = scoreBoard;
 
-if(localStorage.name != null){
-person.name = localStorage.getItem(localStorage.name)
-person.score = localStorage.getItem(localStorage.scoreCount)
-}
-
-model.scoreBoard.push(person)
 }

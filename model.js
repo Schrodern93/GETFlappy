@@ -5,6 +5,10 @@ const model = {
     TOP: 0,
     LEFT: 99,
     RIGHT: 0, // for å stoppe 
+    GRAVITY: 0.4,
+    SPEED: 0.5,
+    score: 0,
+    margin: 0.5,
 
     input:{
         name:"",
@@ -45,8 +49,8 @@ const model = {
         {name: "Marie", score:13},
         {name: "Terje", score:19},
         {name: "Anita", score:765},
-        {name: "Erik", score:4},
-        {name: "Elin", score:155},
-        {name: "Eskil", score:7},
+        {name: "Erik", score:2},
+        {name: "Elin", score:1},
+        {name: "Eskil", score:4},
     ],
 }
