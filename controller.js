@@ -94,7 +94,7 @@ function initGame() {
     model.SPEED = 0.5;
     model.score = 0;
     model.margin = 0.5;
-    model.bird = { Height: 10, Width: 10, yaxis: 30, xaxis: 5, img: "/assets/getvinger.svg" };
+    model.bird = { Height: 10, Width: 10, yaxis: 30, xaxis: 5, img: "assets/getvinger.svg" };
     model.counter = 0;
 
     model.listOfCollisionObjects = [
