@@ -84,3 +84,15 @@ input{
     padding-left: 2vw;
     padding-top: 2vh;
 }
+
+#scoreSpan {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    color: darkslateblue;
+    font-weight: 800;
+}
+#nameSpan {
+    font-size: larger;
+    color: orangered;
+    font-weight: 600;
+}

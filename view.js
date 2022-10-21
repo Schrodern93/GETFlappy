@@ -24,7 +24,7 @@ function gameOverView() {
                 <button style="width: 240px; height:100px;" onclick="showStartScreen();">START NYTT SPILL</button>
                 </div>`;
 }
-//model.score % model.listOfCollisionObjects.length
+
 function createWalls(i) {
     let html = "";
 

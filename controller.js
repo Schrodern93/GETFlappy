@@ -68,12 +68,9 @@ function updateGame() {
 }
 
 function endGame() {
-    
     model.birdIsAlive = false;
-    clearInterval(gameLoop);
-    addPlayerToScoreBoard();
     addToScoreboard();
-    // createScoreboard();
+    clearInterval(gameLoop);
 }
 
 function startGame() {
@@ -87,13 +84,6 @@ function addEventListener() {
         // console.log("event triggrer ")
         if (event.code === 'Space') up();
     });
-}
-function addPlayerToScoreBoard() {
-    let player = {}
-    player.name = model.input.name
-    player.score = model.score
-    model.scoreBoard.push(player);
-    createScoreboard()
 }
 
 function initGame() {

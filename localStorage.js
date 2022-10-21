@@ -1,25 +1,27 @@
 function addToScoreboard() {
 
-  let board = localStorage.getItem('scoreBoard');
-  console.log(board)
-  let person = {
-    score: model.score,
-    name: model.input.name
-  };
+  const i = localStorage.length;
+  
+  let playerName = model.input.name.trim();
+  if(playerName === "") playerName = `Anonym${i}Fugl`;
 
-  // board.push(person);
+  localStorage.setItem(i, playerName + "," + model.score);
+
+  model.scoreBoard = getScoreBoardFromLocalStorage();
+  model.input.name = '';
+  createScoreboard();
 }
+
 function getScoreBoardFromLocalStorage() {
+  let scoreList = [];
+  for (let i = 0; i < localStorage.length; i++) {
 
+    const details = localStorage[i].split(',');
 
-  let scoreBoard = localStorage.getItem('scoreBoard');
-
-  if(scoreBoard.length == 0) {
-   localStorage.setItem('scoreBoard', []);
+    const name = details[0];
+    const score = parseInt(details[1]);
+    scoreList.push({ name, score });
   }
 
-  scoreBoard = localStorage.getItem('scoreBoard');
-  console.log(scoreBoard, "scoreBoard etter")
-  model.scoreBoard = scoreBoard;
-
+  return scoreList.sort((a, b) => b.score - a.score);
 }

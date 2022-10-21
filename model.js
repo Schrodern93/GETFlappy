@@ -41,16 +41,5 @@ const model = {
 
     counter: 0,
 
-    scoreBoard:[
-        {name: "Bjørnar", score:15},
-        {name: "Joakim", score:12},
-        {name: "Linn", score:112},
-        {name: "Therese", score:14},
-        {name: "Marie", score:13},
-        {name: "Terje", score:19},
-        {name: "Anita", score:765},
-        {name: "Erik", score:2},
-        {name: "Elin", score:1},
-        {name: "Eskil", score:4},
-    ],
+    scoreBoard:[],
 }

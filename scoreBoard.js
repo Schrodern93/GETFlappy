@@ -1,15 +1,14 @@
-createScoreboard()
+createScoreboard();
 function createScoreboard() {
-    let html ="<h1>SCOREBOARD</h1>";
+    let html = "<h1>SCOREBOARD</h1>";
+    let records = getScoreBoardFromLocalStorage();
 
-    const sortedScores = model.scoreBoard.sort((a, b) => b.score - a.score);
-
-    for (let i = 0; i < 10; i++) {
-       
-        html += `<div class="scoreBoard"><b>${i +1})</b> ${sortedScores[i].name}  ${sortedScores[i].score}</div>`
-        
+    for (let i = 0; i < records.length; i++) {
+        const record = records[i];
+        html += `
+        <div class="scoreBoard">
+            <b>${i + 1})</b> 🐤<span id="nameSpan">${record?.name}</span> | <span id="scoreSpan"> ${record?.score} </span>
+        </div>`;
     }
-
-    
     document.getElementById("scoreBoardContainer").innerHTML = html;
 }
