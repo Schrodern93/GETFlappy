@@ -40,11 +40,17 @@ function moveObject(i) {
 }
 
 function CheckForCollision(i) {
+
+    const birdCenter = model.bird.xaxis + (model.bird.Width / 2);
+    const colPosLeft = model.listOfCollisionObjects[i].X - model.margin;
+    const colPosRight = model.listOfCollisionObjects[i].X + model.margin;
+    const colHeigh = model.listOfCollisionObjects[i].Height - (model.bird.Height + 4);
+    const colLow = model.BOTTOM - model.bottomListOfCollisionObjects[i].Height;
+
     //denne må fikses 
-    if (model.listOfCollisionObjects[i].X + model.margin >= model.bird.xaxis + (model.bird.Width / 2) &&
-        model.listOfCollisionObjects[i].X - model.margin <= model.bird.xaxis + (model.bird.Width / 2)) { // Midten av fuglen..       
-        if (model.bird.yaxis < (model.listOfCollisionObjects[i].Height - (model.bird.Height + 2)) ||
-            model.bird.yaxis > (model.BOTTOM - model.bottomListOfCollisionObjects[i].Height + 2)) {  // +2 for twerking , må fikse litt til
+    if (colPosRight >= birdCenter && colPosLeft  <= birdCenter) {
+        if (model.bird.yaxis < colHeigh ||
+            model.bird.yaxis > colLow) {  // +2 for twerking , må fikse litt til
             model.birdIsAlive = false;
         }
         // model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
@@ -69,8 +75,8 @@ function updateGame() {
 
 function endGame() {
     model.birdIsAlive = false;
-    addToScoreboard();
     clearInterval(gameLoop);
+    addToScoreboard();
 }
 
 function startGame() {

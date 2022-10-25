@@ -4,6 +4,7 @@ function createScoreboard() {
     let records = getScoreBoardFromLocalStorage();
 
     for (let i = 0; i < records.length; i++) {
+        if(i == 10) break;
         const record = records[i];
         html += `
         <div class="scoreBoard">
