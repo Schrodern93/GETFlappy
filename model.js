@@ -5,7 +5,7 @@ const model = {
     TOP: 0,
     LEFT: 99,
     RIGHT: 0, // for å stoppe 
-    GRAVITY: 0.4,
+    GRAVITY: 0.5,
     SPEED: 0.5,
     score: 0,
     margin: 0.5,

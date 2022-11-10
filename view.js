@@ -9,7 +9,7 @@ function gameview() {
             ${createWalls(model.counter)}
 
         <div id="bird" style="top:${model.bird.yaxis}%; left:${model.bird.xaxis}%; width: ${model.bird.Width}%;">
-            <img style="heigth:${model.bird.Height}%; width: 100%;"  src="${model.bird.img}"/>
+            <img id="keyImage" style="heigth:${model.bird.Height}%; width: 100%;  "  src="${model.bird.img}"/> 
         </div>`;
 
 

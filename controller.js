@@ -6,18 +6,20 @@ function fly() {
 }
 
 function up() {
-    if (model.bird.yaxis <= (model.TOP - model.bird.Height - 2)) { /* GAME OVER */ };
-    model.bird.yaxis -= 8;
+    // if (model.bird.yaxis <= (model.TOP - model.bird.Height - 2)) { /* GAME OVER */ };
+    model.bird.yaxis -= 7;
 }
 
 function checkIfBottomIsHit() {
-    if (model.bird.yaxis - 3 > model.BOTTOM) {
+    if (model.bird.yaxis > model.BOTTOM) {
         model.birdIsAlive = false;
+        setTimeout(alert("Du traff bakken!"),1000);
     }
 }
 function checkIfTopIsHit() {
     if (model.bird.yaxis + model.bird.Height < model.TOP) {
         model.birdIsAlive = false;
+        setTimeout(alert("Du traff scoren din :P"),1000);
     }
 }
 
@@ -44,7 +46,7 @@ function CheckForCollision(i) {
     const birdCenter = model.bird.xaxis + (model.bird.Width / 2);
     const colPosLeft = model.listOfCollisionObjects[i].X - model.margin;
     const colPosRight = model.listOfCollisionObjects[i].X + model.margin;
-    const colHeigh = model.listOfCollisionObjects[i].Height - (model.bird.Height + 4);
+    const colHeigh = model.listOfCollisionObjects[i].Height - (model.bird.Height + 6);
     const colLow = model.BOTTOM - model.bottomListOfCollisionObjects[i].Height;
 
     //denne må fikses 
@@ -52,6 +54,7 @@ function CheckForCollision(i) {
         if (model.bird.yaxis < colHeigh ||
             model.bird.yaxis > colLow) {  // +2 for twerking , må fikse litt til
             model.birdIsAlive = false;
+            setTimeout(alert("Du traff en stolpe!"),1000);
         }
         // model.bird.yaxis + model.bird.Height + 3 <= model.listOfCollisionObjects[i].Height || 
         if (model.birdIsAlive & !model.birdThroughObject) {
@@ -66,15 +69,16 @@ function CheckForCollision(i) {
 //69 - model.bottomListOfCollisionObjects[i].Height = 64 til 19      0 + model.listOfCollisionObjects[i].Height = 5 til 40  
 // bird height = 10 
 function updateGame() {
-    moveObject(model.counter);
     CheckForCollision(model.counter);
-    if (!model.birdIsAlive) endGame();
+    moveObject(model.counter);
     fly();
+    if (!model.birdIsAlive) endGame();
     gameview();
 }
 
 function endGame() {
     model.birdIsAlive = false;
+  
     clearInterval(gameLoop);
     addToScoreboard();
 }
@@ -96,7 +100,7 @@ function initGame() {
     console.log("init blir kjørt")
     model.birdIsAlive = true;
     model.birdThroughObject = false;
-    model.GRAVITY = 0.4;
+    model.GRAVITY = 0.5;
     model.SPEED = 0.5;
     model.score = 0;
     model.margin = 0.5;
@@ -110,7 +114,7 @@ function initGame() {
         { X: 0, Y: 0, Width: 1, Height: 54 },
         { X: 0, Y: 0, Width: 1, Height: 20 },
         { X: 0, Y: 0, Width: 1, Height: 54 },
-        { X: 0, Y: 0, Width: 1, Height: 5 },
+        { X: 0, Y: 0, Width: 1, Height: 10 },
 
     ];
 
@@ -121,7 +125,7 @@ function initGame() {
         { X: 0, Y: 0, Width: 1, Height: 20 },
         { X: 0, Y: 0, Width: 1, Height: 54 },
         { X: 0, Y: 0, Width: 1, Height: 20 },
-        { X: 0, Y: 0, Width: 1, Height: 5 },
+        { X: 0, Y: 0, Width: 1, Height: 45 },
 
     ];
 
